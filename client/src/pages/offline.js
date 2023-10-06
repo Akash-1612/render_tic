@@ -30,18 +30,16 @@ function App() {
 
   // Function to handle a square click
   const handleSquareClick = (index) => {
-    // Create a copy of the current board
     const squares = [...board];
 
-    // If the square is already filled or there's a winner, do nothing
+
     if (squares[index] || calculateWinner(squares)) {
       return;
     }
 
-    // Set the square to X or O based on the current player
+
     squares[index] = xIsNext ? 'X' : 'O';
 
-    // Update the board and toggle the current player
     setBoard(squares);
     setXIsNext(!xIsNext);
   };
@@ -80,12 +78,9 @@ function App() {
           </div>
         ))}
       </div>
-      {/* Display the game status */}
       <div className="status">
         {status}
       </div>
-
-        {/* Button to reset the game */}
         <button className="reset-button" onClick={handleReset}>
             Reset
         </button>

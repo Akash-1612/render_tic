@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-// Serve your React app (build it first if needed) - Replace 'path_to_your_build_folder' with the actual path
+
 app.use(express.static('client/build'));
 
 // Store the game rooms and players

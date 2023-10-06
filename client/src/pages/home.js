@@ -15,11 +15,9 @@ function Home() {
         </div>
         
         <div className="subBtn">
-            {/* button to redirect to single player mode */}
          <Link to="/offline"> <button> {<span> Offline </span>} </button> </Link>
             </div>
           <div className='csvbtn'>
-            {/* button to redirect to multi player mode */}
         <Link to="/online"> <button> {<span> Online </span>} </button> /</Link>
         </div>
 

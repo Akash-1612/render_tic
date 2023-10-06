@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import '../components_resources/online.css';
 
-const socket = io('http://localhost:3001'); // Replace with your server URL
+const socket = io('http://localhost:3001'); 
 
 const Online = () => {
   const [room, setRoom] = useState(''); // State for room name
@@ -15,7 +15,7 @@ const Online = () => {
   const handleCreateOrJoin = () => {
     if (room.trim() !== '') {
       // Check if user is creating the room or joining
-      const isRoomCreator = Math.random() < 0.5; // Randomly determine room creator
+      const isRoomCreator = Math.random() < 0.5; 
       setIsCreator(isRoomCreator);
 
       // Emit an event to the server to create or join the room
@@ -53,21 +53,21 @@ const Online = () => {
     });
   }, []);
 
-  // Render the game board and room creation/join UI
+
   return (
     <div>
       {isWaiting ? (
         <p>Waiting for the other person to join...</p>
       ) : (
         <>
-          <div>
+          <div className='roomName'>
             <input
               type="text"
               placeholder="Enter room name"
               value={room}
               onChange={(e) => setRoom(e.target.value)}
             />
-            <button onClick={handleCreateOrJoin}>
+            <button className='roomBtn' onClick={handleCreateOrJoin}>
               {isCreator ? 'Create Room' : 'Join Room'}
             </button>
           </div>
